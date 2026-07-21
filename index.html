@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07111f" />
+    <meta name="description" content="Instalator firmware PRS Level Pro dla ESP32-C6" />
+    <title>PRS Level Pro — instalator firmware</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="brand" aria-hidden="true"><span>PRS</span><span>LEVEL PRO</span></div>
+        <p class="eyebrow">ESP32-C6 · USB-C</p>
+        <h1 id="page-title">Aktualizacja bez&nbsp;PlatformIO</h1>
+        <p class="lead">Podłącz urządzenie przewodem USB-C, wybierz port i wgraj najnowszy firmware bezpośrednio z przeglądarki.</p>
+      </section>
+      <section class="installer-card" aria-labelledby="install-title">
+        <div class="status-row"><span class="status-dot" aria-hidden="true"></span><div><p class="status-label">Dostępny firmware</p><p id="firmware-version" class="version">Sprawdzanie wersji…</p></div></div>
+        <h2 id="install-title">Zainstaluj firmware</h2>
+        <ol><li>Podłącz PRS Level Pro przewodem USB obsługującym dane.</li><li>Kliknij przycisk i wybierz port urządzenia.</li><li>Potwierdź instalację i poczekaj na ponowne uruchomienie.</li></ol>
+        <div id="unsupported" class="notice" hidden>Instalator wymaga Chrome lub Edge na komputerze. Firefox, Safari i przeglądarki mobilne nie obsługują połączenia Web Serial.</div>
+        <div class="install-action"><esp-web-install-button manifest="firmware/manifest.json"><button slot="activate" class="primary-button" type="button">Połącz i zainstaluj</button><span slot="unsupported">Przeglądarka nie jest obsługiwana</span></esp-web-install-button></div>
+        <details><summary>Urządzenie nie pojawia się na liście?</summary><p>Przytrzymaj <strong>BOOT</strong>, naciśnij <strong>RESET</strong>, puść <strong>BOOT</strong> i spróbuj ponownie. Upewnij się też, że przewód USB obsługuje transmisję danych.</p></details>
+      </section>
+      <p class="footnote">Nie odłączaj przewodu podczas instalacji. Opcję kasowania pamięci wybieraj tylko przy czystej instalacji lub problemach z uruchomieniem.</p>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
