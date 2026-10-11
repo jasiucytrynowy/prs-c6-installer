@@ -25,11 +25,14 @@ jobs:
 
       - name: Assemble public site
         run: |
+          set -euo pipefail
           mkdir -p _site/firmware
           cp index.html app.js styles.css _site/
-          cp firmware/manifest.json _site/firmware/
-          cat .firmware/part-*.b64 | base64 --decode > _site/firmware/firmware.factory.bin
-          test -s _site/firmware/firmware.factory.bin
+          cp firmware/manifest-c6.json firmware/manifest-s3.json _site/firmware/
+          cat .firmware-c6/part-*.b64 | base64 --decode > _site/firmware/firmware-c6.factory.bin
+          cat .firmware-s3/part-*.b64 | base64 --decode > _site/firmware/firmware-s3.factory.bin
+          test -s _site/firmware/firmware-c6.factory.bin
+          test -s _site/firmware/firmware-s3.factory.bin
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -44,5 +47,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-# Pages deployment is triggered on every main-branch update.

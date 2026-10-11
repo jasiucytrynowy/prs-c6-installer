@@ -5,7 +5,7 @@ if (!("serial" in navigator)) {
   unsupportedNotice.hidden = false;
 }
 
-fetch("firmware/manifest.json", { cache: "no-store" })
+fetch("firmware/manifest-c6.json", { cache: "no-store" })
   .then((response) => {
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
