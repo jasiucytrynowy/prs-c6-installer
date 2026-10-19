@@ -28,11 +28,13 @@ jobs:
           set -euo pipefail
           mkdir -p _site/firmware
           cp index.html app.js styles.css _site/
-          cp firmware/manifest-c6.json firmware/manifest-s3.json _site/firmware/
+          cp firmware/manifest-c6.json firmware/manifest-s3.json firmware/manifest-s3-143c.json _site/firmware/
           cat .firmware-c6/part-*.b64 | base64 --decode > _site/firmware/firmware-c6.factory.bin
           cat .firmware-s3/part-*.b64 | base64 --decode > _site/firmware/firmware-s3.factory.bin
+          cat .firmware-s3-143c/part-*.b64 | base64 --decode > _site/firmware/firmware-s3-143c.factory.bin
           test -s _site/firmware/firmware-c6.factory.bin
           test -s _site/firmware/firmware-s3.factory.bin
+          test -s _site/firmware/firmware-s3-143c.factory.bin
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
