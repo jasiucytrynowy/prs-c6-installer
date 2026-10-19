@@ -34,9 +34,9 @@ jobs:
           for part in .firmware-s3/part-*.b64; do base64 --decode "$part"; done > _site/firmware/firmware-s3.factory.bin
           for part in .firmware-s3-143c/part-*.b64; do base64 --decode "$part"; done > _site/firmware/firmware-s3-143c.factory.bin
           cd _site/firmware
-          echo "e682664304b974ff09f2c191d4b9d53b4a42cf6198f0fbac4bde33a3f9d568af  firmware-c6.factory.bin" | sha256sum --check
-          echo "73f6671d0ab8a11312dcb94c2ab298cf33ccf820513f256c6a01687753e11648  firmware-s3.factory.bin" | sha256sum --check
-          echo "83d77c177b583ffc05659e5fefc00ca886790967fe43d24d02002d621e4fdc65  firmware-s3-143c.factory.bin" | sha256sum --check
+          echo "907e54e4b533a11d042f2724d5ef85208b0e3bf6f3c2719255b758399b751811  firmware-c6.factory.bin" | sha256sum --check
+          echo "76e3c16ca2f318e1fd261a4ab48c1577980287ab387ebcd3b2188be2f180bd75  firmware-s3.factory.bin" | sha256sum --check
+          echo "19bd489586510014fbd44ea49716e5db86bc8fce52a70226da3d01463e32cea3  firmware-s3-143c.factory.bin" | sha256sum --check
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
