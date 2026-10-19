@@ -1,13 +1,13 @@
 {
   "name": "PRS Level Pro — ESP32-S3 AMOLED 1.43C",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32-S3",
       "parts": [
         {
-          "path": "firmware-s3-143c.factory.bin",
+          "path": "firmware-s3-143c-0.7.6.factory.bin",
           "offset": 0
         }
       ]
